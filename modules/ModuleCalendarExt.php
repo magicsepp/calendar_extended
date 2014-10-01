@@ -314,7 +314,13 @@ class ModuleCalendarExt extends \EventsExt
 			{
 				$strClass .= ' selected';
 			}
-
+			
+			//Mark expired days
+            		if (strtotime($intKey) < time())
+            		{
+                		$strClass .= ' expired';
+            		}
+ 
 			// Inactive days
 			if (empty($intKey) || !isset($arrAllEvents[$intKey]))
 			{
